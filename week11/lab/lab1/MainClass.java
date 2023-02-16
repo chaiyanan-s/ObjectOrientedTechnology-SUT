@@ -15,24 +15,22 @@ public class MainClass {
             num1 = sc.nextInt();
             System.out.print("Enter num2: ");
             num2 = sc.nextInt();
-        try {
-            System.out.println(arr1[num1] + " / " + arr2[num2] + " = " + arr1[num1]/arr2[num2]);
-        }
-        catch (ArrayIndexOutOfBoundsException ex) {
-            System.out.println("An exception occurred: java.lang.ArrayIndexOutOfBoundsException: Index 6 out of boundsfor length 6 ");
-            System.out.println("The entered number exceeds the array size.");
-        }
-        catch(ArithmeticException ex) {
-            System.out.println("An exception occurred: java.lang.ArithmeticException: / by zero");
-            System.out.println("Division by zero is not allowed.");
-        }
+            try {
+                System.out.println(arr1[num1] + " / " + arr2[num2] + " = " + arr1[num1]/arr2[num2]);
+            }
+            catch (ArrayIndexOutOfBoundsException ex) {
+                System.out.println("An exception occurred: " + ex);
+                System.out.println("The entered number exceeds the array size.");
+            }
+            catch(ArithmeticException ex) {
+                System.out.println("An exception occurred: " + ex);
+                System.out.println("Division by zero is not allowed.");
+            }
         }
         catch(InputMismatchException ex) {
-            System.out.println("An exception occurred: java.util.InputMismatchException");
+            System.out.println("An exception occurred: InputMismatchException");
             System.out.println("The index must be an integer.");
-        }
-        finally {
-            System.out.print("");
+
         }
         sc.close();
     }
